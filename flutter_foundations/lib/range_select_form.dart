@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
+typedef IntValueSetter = void Function(int value);
+
 class RangeSelectorForm extends StatelessWidget {
-  final void Function(int value) intMaxSetter;
-  final void Function(int value) intMinSetter;
+  final IntValueSetter intMaxSetter;
+  final IntValueSetter intMinSetter;
 
   const RangeSelectorForm({
     Key? key,
@@ -38,7 +40,7 @@ class RangeSelectorForm extends StatelessWidget {
 
 class RangeSelectorTextFormField extends StatelessWidget {
   final String textLabel;
-  final void Function(int value) intValueSetter;
+  final IntValueSetter intValueSetter;
 
   const RangeSelectorTextFormField(
       {Key? key, required this.textLabel, required this.intValueSetter})
